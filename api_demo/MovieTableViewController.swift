@@ -10,6 +10,7 @@ import UIKit
 
 class MovieTableViewController: UITableViewController {
     let db = DataModel()
+    let cellId = "movieCell"
     var movieList: [Movie] = []
     
     @IBOutlet var movieTable: UITableView!
@@ -26,6 +27,13 @@ class MovieTableViewController: UITableViewController {
         return movieList.count
     }
 
-    // need cellForRowAt
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = movieTable.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MovieTableViewCell
+        let movieData = movieList[indexPath.row]
+        cell.titleLabel.text = movieData.title
+        cell.dirNameLabel.text = movieData.director
+        return cell
+    }
+    
 }
 

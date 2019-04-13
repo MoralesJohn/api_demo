@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5294955F2260354200051713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294955E2260354200051713 /* AppDelegate.swift */; };
-		529495612260354200051713 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529495602260354200051713 /* ViewController.swift */; };
+		529495612260354200051713 /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529495602260354200051713 /* MovieTableViewController.swift */; };
 		529495642260354200051713 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529495622260354200051713 /* Main.storyboard */; };
 		529495662260354300051713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 529495652260354300051713 /* Assets.xcassets */; };
 		529495692260354300051713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529495672260354300051713 /* LaunchScreen.storyboard */; };
@@ -16,6 +16,7 @@
 		5294957F2260354300051713 /* api_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294957E2260354300051713 /* api_demoUITests.swift */; };
 		5294958D2260370700051713 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294958C2260370700051713 /* DataModel.swift */; };
 		5294958E226042F600051713 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294958C2260370700051713 /* DataModel.swift */; };
+		52C87DCB226189E90037F592 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C87DCA226189E90037F592 /* MovieTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,7 @@
 /* Begin PBXFileReference section */
 		5294955B2260354200051713 /* api_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = api_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5294955E2260354200051713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		529495602260354200051713 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		529495602260354200051713 /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
 		529495632260354200051713 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		529495652260354300051713 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		529495682260354300051713 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +51,7 @@
 		5294957E2260354300051713 /* api_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = api_demoUITests.swift; sourceTree = "<group>"; };
 		529495802260354300051713 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5294958C2260370700051713 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		52C87DCA226189E90037F592 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +103,13 @@
 			isa = PBXGroup;
 			children = (
 				5294955E2260354200051713 /* AppDelegate.swift */,
-				529495602260354200051713 /* ViewController.swift */,
+				529495602260354200051713 /* MovieTableViewController.swift */,
 				529495622260354200051713 /* Main.storyboard */,
 				529495652260354300051713 /* Assets.xcassets */,
 				529495672260354300051713 /* LaunchScreen.storyboard */,
 				5294956A2260354300051713 /* Info.plist */,
 				5294958C2260370700051713 /* DataModel.swift */,
+				52C87DCA226189E90037F592 /* MovieTableViewCell.swift */,
 			);
 			path = api_demo;
 			sourceTree = "<group>";
@@ -260,8 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				529495612260354200051713 /* ViewController.swift in Sources */,
+				529495612260354200051713 /* MovieTableViewController.swift in Sources */,
 				5294955F2260354200051713 /* AppDelegate.swift in Sources */,
+				52C87DCB226189E90037F592 /* MovieTableViewCell.swift in Sources */,
 				5294958D2260370700051713 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
