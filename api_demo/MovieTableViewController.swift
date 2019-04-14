@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieTableViewController: UITableViewController {
+class MovieTableViewController: UIViewController {
     let db = DataModel()
     let cellId = "movieCell"
     var movieList: [Movie] = []
@@ -23,11 +23,17 @@ class MovieTableViewController: UITableViewController {
         movieTable.dataSource = self
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+}
+
+// MARK: - tableView funcs
+extension MovieTableViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieList.count
     }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = movieTable.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MovieTableViewCell
         let movieData = movieList[indexPath.row]
         cell.titleLabel.text = movieData.title
@@ -37,3 +43,18 @@ class MovieTableViewController: UITableViewController {
     
 }
 
+extension MovieTableViewController: UITableViewDelegate {
+    
+}
+
+// MARK: - UI funcs
+extension MovieTableViewController {
+    
+    func setUI() {
+        
+    }
+    
+    func formatCell(_ cell: MovieTableViewCell) {
+        
+    }
+}
