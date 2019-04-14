@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5210FD352263E1AA00BCEAEE /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5210FD342263E1AA00BCEAEE /* Consts.swift */; };
 		5294955F2260354200051713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294955E2260354200051713 /* AppDelegate.swift */; };
 		529495612260354200051713 /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529495602260354200051713 /* MovieTableViewController.swift */; };
 		529495642260354200051713 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529495622260354200051713 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5210FD342263E1AA00BCEAEE /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		5294955B2260354200051713 /* api_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = api_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5294955E2260354200051713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		529495602260354200051713 /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				529495602260354200051713 /* MovieTableViewController.swift */,
 				52C87DCA226189E90037F592 /* MovieTableViewCell.swift */,
 				52C4B1822262D2A600968A0F /* MovieDetailViewController.swift */,
+				5210FD342263E1AA00BCEAEE /* Consts.swift */,
 			);
 			path = api_demo;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				529495612260354200051713 /* MovieTableViewController.swift in Sources */,
+				5210FD352263E1AA00BCEAEE /* Consts.swift in Sources */,
 				52C4B1832262D2A600968A0F /* MovieDetailViewController.swift in Sources */,
 				5294955F2260354200051713 /* AppDelegate.swift in Sources */,
 				52C87DCB226189E90037F592 /* MovieTableViewCell.swift in Sources */,

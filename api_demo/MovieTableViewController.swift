@@ -10,8 +10,6 @@ import UIKit
 
 class MovieTableViewController: UIViewController {
     let db = DataModel()
-    let cellId = "movieCell"
-    let segueId = "tableToDetail"
     var movieList: [Movie] = []
     
     @IBOutlet var movieTable: UITableView!
@@ -21,7 +19,7 @@ class MovieTableViewController: UIViewController {
         
         movieTable.delegate = self
         movieTable.dataSource = self
-        let notificationName = db.notificationName
+        let notificationName = Consts.notificationName
         NotificationCenter.default.addObserver(self, selector: #selector(receivedData), name: notificationName, object: nil)
     }
     
@@ -54,7 +52,7 @@ extension MovieTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = movieTable.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MovieTableViewCell
+        let cell = movieTable.dequeueReusableCell(withIdentifier: Consts.cellId, for: indexPath) as! MovieTableViewCell
         let movieData = movieList[indexPath.row]
         cell.titleLabel.text = movieData.title
         cell.dirNameLabel.text = movieData.director
@@ -66,7 +64,7 @@ extension MovieTableViewController: UITableViewDataSource {
 extension MovieTableViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: segueId, sender: indexPath)
+        performSegue(withIdentifier: Consts.segueId, sender: indexPath)
     }
     
 }

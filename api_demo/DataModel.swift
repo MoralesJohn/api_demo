@@ -18,8 +18,6 @@ struct MovieWrapper: Decodable {
 }
 
 public class DataModel {
-    let apiUrl = URL(string: "https://swapi.co/api/films")
-    let notificationName = NSNotification.Name("didReceiveData")
     var movieList: [Movie] = []
     
     init() {
@@ -27,7 +25,7 @@ public class DataModel {
     }
     
     func requestData() {
-        guard let url = apiUrl else { return }
+        guard let url = Consts.apiUrl else { return }
         let task = URLSession.shared.dataTask(with: url) {(data, response, err) in
             guard err == nil else {
                 print("Session Error:", err?.localizedDescription)
@@ -40,7 +38,7 @@ public class DataModel {
             do {
                 let movieListData = try JSONDecoder().decode(MovieWrapper.self, from: data)
                 self.movieList = movieListData.results
-                NotificationCenter.default.post(name: self.notificationName, object: nil)
+                NotificationCenter.default.post(name: Consts.notificationName, object: nil)
             } catch let err {
                 print("Decode error:", err)
             }
