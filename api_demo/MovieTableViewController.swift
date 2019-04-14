@@ -19,9 +19,18 @@ class MovieTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        movieList = db.movieList
         movieTable.delegate = self
         movieTable.dataSource = self
+        let notificationName = db.notificationName
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedData), name: notificationName, object: nil)
+    }
+    
+    @objc func receivedData() {
+        print("in rec'd data")
+        movieList = db.movieList
+        DispatchQueue.main.async {
+            self.movieTable.reloadData()
+        }
     }
 
     // MARK: - segue

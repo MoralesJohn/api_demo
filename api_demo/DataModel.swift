@@ -13,21 +13,38 @@ struct Movie: Decodable {
     var director: String
 }
 
+struct MovieWrapper: Decodable {
+    var results: [Movie]
+}
+
 public class DataModel {
+    let apiUrl = URL(string: "https://swapi.co/api/films")
+    let notificationName = NSNotification.Name("didReceiveData")
     var movieList: [Movie] = []
     
     init() {
-        defaultData()
+        requestData()
     }
     
-    func defaultData() {
-        var results: [Movie] = []
-        let titles = ["Duck Soup", "The Big Sleep", "Blazing Saddles"]
-        let dirs = ["Leo McCarey", "Howard Hawks", "Mel Brooks"]
-        for ndx in 0..<titles.count {
-            let movie = Movie(title: titles[ndx], director: dirs[ndx])
-            results.append(movie)
-        }
-        self.movieList = results
+    func requestData() {
+        guard let url = apiUrl else { return }
+        let task = URLSession.shared.dataTask(with: url) {(data, response, err) in
+            guard err == nil else {
+                print("Session Error:", err?.localizedDescription)
+                return
+            }
+            guard let data = data else {
+                print("No data received!")
+                return
+            }
+            do {
+                let movieListData = try JSONDecoder().decode(MovieWrapper.self, from: data)
+                self.movieList = movieListData.results
+                NotificationCenter.default.post(name: self.notificationName, object: nil)
+            } catch let err {
+                print("Decode error:", err)
+            }
+        }.resume()
     }
+
 }
