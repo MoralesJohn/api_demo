@@ -101,6 +101,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hr3-aC-Egj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="JYJ-P8-MZV"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Details" id="nzX-NO-OZz">
+                                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="2pp-bU-V1F">
+                                            <connections>
+                                                <action selector="doneButtonPressed:" destination="vhb-4m-535" id="klN-cO-dXO"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aF7-e6-8Ix">
                                 <rect key="frame" x="0.0" y="128" width="414" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -113,17 +128,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hr3-aC-Egj">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="JYJ-P8-MZV"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Details" id="nzX-NO-OZz">
-                                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="2pp-bU-V1F"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -139,6 +143,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fG7-pc-o2I"/>
                     </view>
+                    <connections>
+                        <outlet property="dirLabel" destination="tPr-3U-XFD" id="MtI-v0-dqd"/>
+                        <outlet property="titleLabel" destination="aF7-e6-8Ix" id="Aty-NV-NOK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ca7-Z3-CnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

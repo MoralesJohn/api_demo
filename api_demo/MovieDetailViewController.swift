@@ -9,22 +9,30 @@
 import UIKit
 
 class MovieDetailViewController: UIViewController {
-
+    
+    var movieData: Movie?
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dirLabel: UILabel!
+    
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setUI()
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+// MARK: - UI Settings
+extension MovieDetailViewController {
+    func setUI() {
+        guard let movieData = movieData else { return }
+        
+        titleLabel.text = movieData.title
+        dirLabel.text = movieData.director
     }
-    */
-
 }

@@ -11,6 +11,7 @@ import UIKit
 class MovieTableViewController: UIViewController {
     let db = DataModel()
     let cellId = "movieCell"
+    let segueId = "tableToDetail"
     var movieList: [Movie] = []
     
     @IBOutlet var movieTable: UITableView!
@@ -23,10 +24,20 @@ class MovieTableViewController: UIViewController {
         movieTable.dataSource = self
     }
 
+    // MARK: - segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // common way of dealing with optional variables
+        guard let ndx = sender as? IndexPath
+            , let detailVC = segue.destination as? MovieDetailViewController
+            else { return }
+        
+        let movieData = movieList[ndx.row]
+        detailVC.movieData = movieData
+    }
     
 }
 
-// MARK: - tableView funcs
+// MARK: - tableView
 extension MovieTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,9 +56,13 @@ extension MovieTableViewController: UITableViewDataSource {
 
 extension MovieTableViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: segueId, sender: indexPath)
+    }
+    
 }
 
-// MARK: - UI funcs
+// MARK: - UI settings
 extension MovieTableViewController {
     
     func setUI() {

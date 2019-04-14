@@ -105,12 +105,12 @@
 			isa = PBXGroup;
 			children = (
 				5294955E2260354200051713 /* AppDelegate.swift */,
-				529495602260354200051713 /* MovieTableViewController.swift */,
-				529495622260354200051713 /* Main.storyboard */,
 				529495652260354300051713 /* Assets.xcassets */,
 				529495672260354300051713 /* LaunchScreen.storyboard */,
 				5294956A2260354300051713 /* Info.plist */,
+				529495622260354200051713 /* Main.storyboard */,
 				5294958C2260370700051713 /* DataModel.swift */,
+				529495602260354200051713 /* MovieTableViewController.swift */,
 				52C87DCA226189E90037F592 /* MovieTableViewCell.swift */,
 				52C4B1822262D2A600968A0F /* MovieDetailViewController.swift */,
 			);
